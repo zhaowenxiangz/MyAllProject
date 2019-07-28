@@ -12,9 +12,9 @@ import javax.persistence.Id;
 import java.util.Date;
 
 /**
- * @Author:zhaoteng
- * @Description:
- * @Date: 23:50 2019/5/1
+ *  @author: zhaoteng
+ *  @Date: 2019\7\28 0028 22:39
+ *  @Description:
  */
 @Entity
 @Setter
@@ -24,14 +24,30 @@ public class ProductCategory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    /**
+     * 商品分类ID
+     */
     private Integer categoryId;
 
+    /**
+     * 商品分类名称
+     */
     private String categoryName;
 
+    /**
+     * 商品分类类型
+     */
     private Integer categoryType;
 
+    /**
+     * 商品创建时间
+     */
     private Date createTime;
 
+    /**
+     * 商品修改时间
+     */
     private Date updateTime;
 
     public ProductCategory() {

@@ -2,44 +2,61 @@ package com.imooc.sell.dataobject;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import java.math.BigDecimal;
-import java.util.Date;
 
 /**
- * @Author:zhaoteng
- * @Description:
- * @Date: 0:52 2019/5/2
+ *  @author: zhaoteng
+ *  @Date: 2019\7\28 0028 22:39
+ *  @Description: 商品信息
  */
 @Entity
-@Getter
 @Setter
-@DynamicUpdate
+@Getter
 public class ProductInfo {
 
+    /**
+     * 商品Id
+     */
     @Id
     private String productId;
 
+    /**
+     * 商品名字
+     */
     private String productName;
 
+    /**
+     * 商品价格
+     */
     private BigDecimal productPrice;
 
-    private Integer productStock;//库存
+    /**
+     * 商品库存
+     */
+    private Integer productStock;
 
+    /**
+     * 商品描述
+     */
     private String productDescription;
 
+    /**
+     * 商品图标
+     */
     private String productIcon;
 
-    private Integer productStatus;//0正常1下架
+    /**
+     * 商品状态 0 正常 1 已下架
+     */
+    private Integer productStatus;
 
+    /**
+     * 商品分类编号
+     */
     private Integer categoryType;
-
-    private Date createTime;
-
-    private Date updateTime;
 
     public ProductInfo() {
     }
@@ -55,8 +72,6 @@ public class ProductInfo {
                 ", productIcon='" + productIcon + '\'' +
                 ", productStatus=" + productStatus +
                 ", categoryType=" + categoryType +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
                 '}';
     }
 }
