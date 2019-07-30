@@ -1,5 +1,6 @@
 package com.imooc.sell.enums;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 /**
@@ -8,6 +9,7 @@ import lombok.Getter;
  *  @Description: 商品枚举
  */
 @Getter
+@AllArgsConstructor
 public enum ProductStatusEnums {
     UP(0, "正常"),
     DOWN(1, "已下架");
@@ -16,8 +18,4 @@ public enum ProductStatusEnums {
 
     private String message;
 
-    ProductStatusEnums(Integer code, String message) {
-        this.code = code;
-        this.message = message;
-    }
 }

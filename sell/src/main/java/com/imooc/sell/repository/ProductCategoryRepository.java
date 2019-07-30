@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * @Author:zhaoteng
- * @Description:
+ * @Description: 商品类目dao
  * @Date: 0:05 2019/5/2
  */
 public interface ProductCategoryRepository extends JpaRepository<ProductCategory, Integer> {
