@@ -50,7 +50,16 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void increaseStock(List<CartDTO> cartDTOList) {
-
+        for (CartDTO cartDTO : cartDTOList) {
+            Optional<ProductInfo> productInfo = respository.findById(cartDTO.getProductId());
+            if (null == productInfo) {
+                throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
+            }
+            //增加库存
+            Integer result = productInfo.get().getProductStock() + cartDTO.getProductQuantity();
+            productInfo.get().setProductStock(result);
+            respository.save(productInfo.get());
+        }
     }
 
     @Override
@@ -61,7 +70,7 @@ public class ProductServiceImpl implements ProductService {
             if (null == productInfo) {
                 throw new SellException(ResultEnum.PRODUCT_NOT_EXIST);
             }
-
+            //查询库存看能否扣除
             Integer result = productInfo.get().getProductStock() - cartDTO.getProductQuantity();
             if (result < 0) {
                 throw new SellException(ResultEnum.PRODUCT_STOCK_NOT_ENOUGH);
