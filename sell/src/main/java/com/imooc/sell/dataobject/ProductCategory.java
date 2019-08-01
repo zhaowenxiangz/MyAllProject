@@ -3,6 +3,7 @@ package com.imooc.sell.dataobject;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.Entity;
@@ -19,6 +20,7 @@ import java.util.Date;
 @Entity
 @Setter
 @Getter
+@ToString
 @DynamicUpdate
 public class ProductCategory {
 
