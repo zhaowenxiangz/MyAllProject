@@ -18,7 +18,7 @@ public class ResultVoUtils {
     }
 
     public static ResultVo success() {
-        return success();
+        return success(null);
     }
 
     public static ResultVo error(Integer code,String msg) {
